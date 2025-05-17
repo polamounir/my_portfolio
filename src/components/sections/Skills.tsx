@@ -73,7 +73,7 @@ const Skills = () => {
                     {skill.name === "Attention to Detail" && "🔍"}
                   </div>
                 )}
-                <span className=" dark:text-white font-medium text-center">
+                <span className="zfont-medium text-center">
                   {skill.name}
                 </span>
               </motion.div>
