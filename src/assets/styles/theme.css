@@ -97,6 +97,11 @@
   --gradient-end: var(--accent-purple);
 
   --photo-border: var(--primary-500);
+
+  /* Scrollbar Colors */
+  --scrollbar-bg: var(--bg-primary);
+  --scrollbar-thumb-start: var(--gradient-start);
+  --scrollbar-thumb-end: var(--gradient-end);
 }
 
 /* Dark theme overrides */
@@ -151,6 +156,11 @@
   --gradient-start: var(--primary-400);
   --gradient-middle: var(--primary-500);
   --gradient-end: var(--accent-purple);
+
+  /* Scrollbar Colors for dark mode */
+  --scrollbar-bg: var(--bg-secondary);
+  --scrollbar-thumb-start: var(--gradient-start);
+  --scrollbar-thumb-end: var(--gradient-end);
 }
 
 /* Apply background gradient to body */
@@ -422,3 +432,36 @@ button {
 .has-shadow{
   filter: drop-shadow(0 0 15px rgb(50, 241, 241));
 }
+
+/* Modern Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    var(--scrollbar-thumb-start),
+    var(--scrollbar-thumb-end)
+  );
+  border-radius: 4px;
+  border: 2px solid var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--button-hover-gradient);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-start) var(--scrollbar-bg);
+}
+
+
