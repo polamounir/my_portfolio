@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { portfolioData } from '../../data/data';
 
@@ -12,11 +11,11 @@ interface Project {
 }
 
 const Projects = () => {
-  const [filter, setFilter] = useState<'all' | 'featured'>('all');
+  // const [filter, setFilter] = useState<'all' | 'featured'>('all');
 
-  const filteredProjects = filter === 'all'
-    ? portfolioData.projects
-    : portfolioData.projects.filter((project: Project) => project.featured);
+  // const filteredProjects = filter === 'all'
+  //   ? portfolioData.projects
+  //   : portfolioData.projects.filter((project: Project) => project.featured);
 
   return (
     <section id="projects" className="py-20">
@@ -57,7 +56,7 @@ const Projects = () => {
         {/* Projects grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence>
-            {filteredProjects.map((project: Project, index) => (
+            {portfolioData.projects.map((project: Project, index) => (
               <motion.div
                 key={project.name}
                 initial={{ opacity: 0, y: 20 }}
